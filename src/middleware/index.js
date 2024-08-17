@@ -7,4 +7,5 @@ export const corsMiddleware = cors({
   optionsSuccessStatus: 200,
 })
 
+// arreglo de middlewares
 export const softStack = [apiKeyValidator]

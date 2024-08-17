@@ -1,6 +1,14 @@
 import { isEmpty } from '../utils/index.js'
 import logger from '../utils/logger.js'
 
+/**
+ * Middlewarea para validar que se envie apikey
+ * (no se utiliza porque no estaba llegando en el header y por tiempo)
+ * @param {*} req
+ * @param {*} res
+ * @param {*} next
+ * @returns
+ */
 export const apiKeyValidator = (req, res, next) => {
   const fName = '[apiKeyValidator]'
 
@@ -8,7 +16,6 @@ export const apiKeyValidator = (req, res, next) => {
 
   // Obtener la API key del encabezado de la solicitud
   const apiKey = req.headers['x-api-key']
-  console.log('🚀 ~ apiKeyValidator ~ apiKey:', apiKey)
 
   // Validar si la API key está presente
   if (isEmpty(apiKey)) {
